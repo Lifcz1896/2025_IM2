@@ -7,5 +7,5 @@ let image = document.getElementById('right-image');
 image.src = url;
 
 const extinct = sessionStorage.getItem('right-record');
-let extinctYear = document.getElementById('right-record');
+let extinctYear = document.getElementById('extinctYear');
 extinctYear.textContent = `Diese Tier wurde ${extinct} ausgelöscht.`;

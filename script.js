@@ -59,11 +59,11 @@ function showErrorUI(side, message) {
 }
 
 
-function compare(distinct) {
-// auslesen
+function compare(extinct) {
+
 let left = parseInt(sessionStorage.getItem('left-record'));
 let right = parseInt(sessionStorage.getItem('right-record'));
-  if (distinct == 'before') {
+  if (extinct == 'before') {
     if (left > right) {
       scoreNumber ++;
       score.textContent = scoreNumber;
@@ -71,7 +71,7 @@ let right = parseInt(sessionStorage.getItem('right-record'));
       fetchRandomAnimal('right');
     } else {
       console.log('wrong game over');
-      window.open('errorPage.html');
+      window.location.href = 'errorPage.html';
     }
   } else {
     if (left < right) {
@@ -81,7 +81,7 @@ let right = parseInt(sessionStorage.getItem('right-record'));
       fetchRandomAnimal('right');
     } else {
       console.log('wrong game over');
-      window.open('errorPage.html');
+      window.location.href = 'errorPage.html';
     }
   }
 

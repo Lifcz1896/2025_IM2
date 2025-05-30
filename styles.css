@@ -1,43 +1,41 @@
-body {
-  margin: 0;
-  height: 100vh;
-  font-family: sans-serif;
-  color: white;
-}
-
 :root {
-  /* Color */
+  /* 🎨 Colors */
   --color-white: #fff;
   --color-whitesmoke: #ebebeb;
   --color-indigo: #4832a1;
   --color-lavender: #eef0ff;
-  --color-darkslateblue: #251c4a; 
+  --color-darkslateblue: #251c4a;
+  --color-incorrect: #EA7F7F;
 
-  /*Font*/
-  --font-inter: Inter;
-  --font-londrina-solid: Londrina Solid;
-  
-  /* FontSize */
+  /* 🖋 Fonts */
+  --font-inter: 'Inter', sans-serif;
+  --font-londrina-solid: 'Londrina Solid', cursive;
+
+  /* 🔠 Font Sizes */
   --font-size-32: 32px;
   --font-size-20: 20px;
 
-  /* Gap */
+  /* 📏 Spacing */
   --gap-24: 24px;
   --gap-10: 10px;
+  --gap-6: 6px;
+  --gap-4: 4px;
 
-    /* Padding */
   --padding-20: 20px;
   --padding-12: 12px;
   --padding-24: 24px;
 
-  /* BorderRadius */
+  /* 🟣 Border Radius */
   --br-12: 12px;
-
-
-
 }
 
-
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  background: gray;
+}
 
 .container {
   display: flex;
@@ -46,116 +44,87 @@ body {
 
 .container-left {
   width: 50%;
-  background: linear-gradient(-210deg, #4832a1 , #ebebeb );
-  display: flex; /* Enable flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+  background: linear-gradient(-210deg, var(--color-indigo), var(--color-whitesmoke));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-right {
   width: 50%;
-  background: linear-gradient(-210deg, #251c4a, #4832a1);
-  display: flex; /* Enable flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column;
-}
-
-.card-left {
-  height: 440px;
-  width: 80%; 
-  border: 1px solid white;
+  background: linear-gradient(-210deg, var(--color-darkslateblue), var(--color-indigo));
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
-  color: white; 
-  padding: 4px;
-  box-sizing: border-box; 
-  text-align: center; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-right {
+.card-lefthand,
+.card-righthand {
   height: 440px;
-    width: 80%; 
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    color: white; 
-    padding: 4px;
-    box-sizing: border-box; 
-    text-align: center; 
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-12);
+  box-sizing: border-box;
+  text-align: center;
+  gap: var(--gap-10);
 }
 
 .card-image {
-  max-width: 100%;
-  max-height: 150px; /* Adjust as needed */
-  object-fit: contain; /* Make sure the image fits within the container */
-  margin-bottom: 15px;
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  object-fit: cover;
 }
 
 .card-title {
-position: relative;
-font-size: 32px;
-font-family: var(--font-inter);
-color: var(--color-white);
-text-align: center;
-margin: 0px;
+  font-size: var(--font-size-32);
+  font-family: var(--font-inter);
+  color: var(--color-white);
+  margin-top: 8px;
 }
 
 .card-subtitle {
-  position: relative;
-  font-size: 20px;
+  margin-top: 4px;
+  font-size: var(--font-size-20);
   font-family: var(--font-inter);
   color: var(--color-whitesmoke);
-  text-align: center;
 }
 
 .card-number {
-font-size: 96px;
-font-weight: 900;
-font-family: var(--font-inter);
-color: var(--color-indigo);
-text-align: center;
-}
-
-.last-record {
-  position: relative;
-  font-size: 20px;
+  font-size: 56px;
   font-weight: 900;
   font-family: var(--font-inter);
   color: var(--color-indigo);
-  text-align: center;
-  }
-  
-
-  /*Game Titel Oben Mitte*/
-
-  .skull-and-bones-svgrepo-com-2-icon {
-  	width: 71px;
-  	position: relative;
-  	height: 72px;
-  	overflow: hidden;
-  	flex-shrink: 0;
 }
-.the-extinction-game {
-  	position: relative;
-  	font-weight: 900;
+
+.last-record {
+  font-size: var(--font-size-20);
+  font-weight: 900;
+  font-family: var(--font-inter);
+  color: var(--color-indigo);
 }
+
+#right-record,
+#right-number {
+  visibility: hidden;
+  font-size: 1px;
+}
+
+/* Title oben –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
 .title {
   position: absolute;
-  top: 100px;
-  left: calc(50% - 321px);
-  box-shadow: 0px 4px 8.2px 2px rgba(0, 0, 0, 0.25);
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 8.2px 2px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-12);
   background-color: var(--color-lavender);
-  overflow: hidden;
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
   padding: var(--padding-12) var(--padding-24);
   gap: var(--gap-10);
   font-size: 64px;
@@ -163,6 +132,234 @@ text-align: center;
   font-family: var(--font-londrina-solid);
 }
 
+.skull-and-bones-svgrepo-com-2-icon {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.the-extinction-game {
+  font-weight: 900;
+  position: relative;
+}
+
 .mb-4 {
-  margin-bottom: 8px;
+  margin: 8px;
+  font-size: 24px;
+  font-family: var(--font-inter);
+  font-weight: bold;
+  color: var(--color-darkslateblue);
+  background-color: var(--color-lavender);
+  border: none;
+  outline: none;
+  border-radius: var(--br-12);
+  box-sizing: border-box;
+  padding: 12px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0.9;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease,
+    color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.mb-4:hover {
+  background-color: #d4cefa;
+  color: #2f3a8c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  text-decoration: none;
+}
+
+/* Score ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.score {
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--padding-12) var(--padding-24);
+  background-color: var(--color-lavender);
+  color: var(--color-darkslateblue);
+  font-family: var(--font-londrina-solid);
+  font-size: 24px;
+  border-radius: var(--br-12);
+  box-shadow: 0 4px 8.2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/*Error Page Styling–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+
+.container-error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(-210deg,var(--color-incorrect), var(--color-indigo))
+
+}
+
+.card-error-page {
+  height: 440px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-12);
+  box-sizing: border-box;
+  text-align: center;
+  gap: var(--gap-10);
+}
+
+
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––– Breakpoint: 1275px –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (min-width: 769px) and (max-width: 1275px) {
+
+  .title {
+    font-size: 32px;
+  }
+
+  .skull-and-bones-svgrepo-com-2-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .score {
+    position: absolute;
+    top: 132px;
+    left: 50%;
+    font-size: 20px;
+  }
+
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––– Breakpoint: 768px –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 768px){
+
+  .title {
+    font-size: 28px;
+    top: 32px
+  }
+
+  .skull-and-bones-svgrepo-com-2-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .score {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    font-size: 18px;
+  }
+
+}
+
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––– Breakpoint: 624px –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+@media (max-width: 624px) {
+
+  .container {
+    flex-direction: column;
+    min-height: 896px;
+  }
+
+  .container-left,
+  .container-right {
+    width: 100%;
+    height: 50%; /* let it grow naturally */
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-lefthand {
+    margin-top: 100px;
+    width: 90%;
+    height: auto;
+    padding: var(--padding-8);
+    gap: var(--gap-6); 
+
+  }
+
+  .card-righthand {
+    width: 90%;
+    height: auto;
+    padding: var(--padding-8);
+    gap: var(--gap-6); 
+  }
+
+  .card-title {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .card-subtitle {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .card-number,
+  .last-record {
+    font-size: 28px;
+    margin: 4px 0;
+  }
+
+  .card-image {
+    width: 100px;
+    height: 100px;
+    margin: 4px 0;
+  }
+
+  .title {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    top: 28px
+  }
+
+  .skull-and-bones-svgrepo-com-2-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .score {
+    position: absolute;
+    top: 28px;
+    left: 60px;
+    font-size: 18px;
+  }
+
+  .mb-4 {
+    font-size: 16px;
+    padding: 6px 16px;
+    margin: 4px 0;
+  }
+
+  button {
+    margin: 6px 0 !important;
+  }
+
+  p, h1, h2, h3 {
+    margin: 4px 0 !important;
+  }
 }

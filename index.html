@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IM 2</title>
-  
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Londrina Solid:wght@900&display=swap" />
 
-
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap"
+    rel="stylesheet"
+  />
 
   <script src="script.js" defer></script>
-
 </head>
 <body>
-
   <div class="title">
-    <img class="skull-and-bones-svgrepo-com-2-icon" alt="" src="/assets/skull-and-bones-svgrepo-com 2.svg">
+    <img
+      class="skull-and-bones-svgrepo-com-2-icon"
+      alt="Skull and Bones"
+      src="/assets/skull-and-bones-svgrepo-com 2.svg"
+    />
     <div class="the-extinction-game">THE EXTINCTION GAME</div>
   </div>
-  <div class="title">
-    <img class="skull-and-bones-svgrepo-com-2-icon" alt="" src="/assets/skull-and-bones-svgrepo-com 2.svg">
+
+  <div class="score">
     <div class="the-extinction-game" id="score">0</div>
   </div>
 
-  <div class="container"> 
+  <div class="container">
     <div class="container-left">
-    <div id="card-left">
-      <img alt="Left Image" class="card-image" id="left-image">
-                <h2 class="card-title" id="left-title">Left Title</h2>
-                <p class="card-subtitle" id="left-subtitle">Left Subtitle</p>
-                <p class="last-record" id="left-record">Last record:</p>
-                <div class="card-number" id="left-number">1</div>
+      <div class="card-lefthand" id="card-left">
+        <img alt="Left Image" class="card-image" id="left-image" />
+        <h2 class="card-title" id="left-title">Left Title</h2>
+        <p class="card-subtitle" id="left-subtitle">Left Subtitle</p>
+        <p class="last-record" id="left-record">Zuletzt gesehen:</p>
+        <div class="card-number" id="left-number">1</div>
+      </div>
     </div>
-  </div>
 
-  <div class="container-right">
-    <div id="card-right">
-      <img alt="Left Image" class="card-image" id="right-image">
-                <h2 class="card-title" id="right-title">Left Title</h2>
-                <p class="card-subtitle" id="right-subtitle">Left Subtitle</p>
-                <p class="last-record" id="right-record">Last record:</p>
-                <div class="card-number" id="right-number">1</div>
+    <div class="container-right">
+      <div class="card-righthand" id="card-right">
+        <img alt="Right Image" class="card-image" id="right-image" />
+        <h2 class="card-title" id="right-title">Right Title</h2>
+        <p class="card-subtitle" id="right-subtitle">Right Subtitle</p>
+        <p class="last-record" id="right-record">Zuletzt gesehen:</p>
+        <div class="card-number" id="right-number">1</div>
+
+        <div class="card-subtitle">Ist dieses Lebewesen</div>
+        <button class="mb-4" onclick="compare('before')">VORHER</button>
+        <div class="card-subtitle">oder</div>
+        <button class="mb-4" onclick="compare('after')">NACHHER</button>
+        <div class="card-subtitle">ausgestorben?</div>
+      </div>
     </div>
-    <div class="mb-4">Ist dieser Tier</div>
-    <button class="mb-4" onclick="compare('before')">Vorher</button>
-    <div class="mb-4">oder</div>
-    <button class="mb-4" onclick="compare('after')">Nachher</button>
-    <div>ausgestorben</div>
   </div>
-</div>
-  
 </body>
 </html>
